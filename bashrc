@@ -136,21 +136,21 @@ function format_xml() {
 }
 
 # From https://gist.github.com/Rob--W/5888648
-function upto() {
+function up() {
     if [ -z "$1" ]; then
-        echo "Usage: upto [directory]"
+        echo "Usage: up [directory]"
         return
     fi
     local upto=$@
     cd "${PWD/\/$upto\/*//$upto}"
 }
 # Auto-completion
-function _upto() {
+function _up() {
     local cur=${COMP_WORDS[COMP_CWORD]}
     local d=${PWD//\//\ }
     COMPREPLY=( $( compgen -W "$d" -- "$cur" ) )
 }
-complete -F _upto upto
+complete -F _up up
 
 # Jump the first matching subdirectory
 function jd() {

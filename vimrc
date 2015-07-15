@@ -43,6 +43,7 @@ Plugin 'tfnico/vim-gradle'
 Plugin 'vim-jp/cpp-vim'
 Plugin 'martong/vim-compiledb-path'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'JazzCore/ctrlp-cmatcher'
 Plugin 'jdonaldson/vaxe'
 Plugin 'lyuts/vim-rtags'
 

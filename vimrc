@@ -47,6 +47,7 @@ Plugin 'JazzCore/ctrlp-cmatcher'
 Plugin 'jdonaldson/vaxe'
 Plugin 'lyuts/vim-rtags'
 Plugin 'tikhomirov/vim-glsl'
+Plugin 'martong/vim-quick-search'
 
 call vundle#end()
 filetype plugin indent on

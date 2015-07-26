@@ -185,6 +185,9 @@ let NERDTreeIgnore = ['\.pyc$', '\.o$']
 let Tlist_Use_Right_Window = 1
 map <Leader>tl :TlistToggle<CR>
 
+"martong/vim-quick-search
+let g:quickSearch_FindCommand = 'LAg! --cpp'
+
 "YouCompleteMe Config
 map gd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 map gi :YcmCompleter GoToImprecise<CR>

@@ -51,6 +51,7 @@ if isOSX; then
     if [ -f `brew --prefix`/etc/bash_completion.d ]; then
         . `brew --prefix`/etc/bash_completion.d
     fi
+    export USE_CCACHE="1"
 fi
 
 #git repo location

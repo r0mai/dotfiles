@@ -68,24 +68,24 @@ export LANGUAGE=en_US.UTF-8
 [ -z "$PS1" ] && return
 
 function extract() {
-    if [ -f $1 ] ; then
-        case $1 in
-            *.tar.lz) tar xvf $1 ;;
-            *.tar.bz2) tar xvjf $1 ;;
-            *.tar.gz) tar xvzf $1 ;;
-            *.tar.xz) tar xvJf $1 ;;
-            *.bz2) bunzip2 $1 ;;
-            *.rar) unrar x $1 ;;
-            *.gz) gunzip $1 ;;
-            *.tar) tar xvf $1 ;;
-            *.tbz2) tar xvjf $1 ;;
-            *.tgz) tar xvzf $1 ;;
-            *.zip) unzip $1 ;;
-            *.apk) unzip $1 ;;
-            *.aar) unzip $1 ;;
-            *.jar) unzip $1 ;;
-            *.Z) uncompress $1 ;;
-            *.7z) 7z x $1 ;;
+    if [ -f "$1" ] ; then
+        case "$1" in
+            *.tar.lz) tar xvf "$1" ;;
+            *.tar.bz2) tar xvjf "$1" ;;
+            *.tar.gz) tar xvzf "$1" ;;
+            *.tar.xz) tar xvJf "$1" ;;
+            *.bz2) bunzip2 "$1" ;;
+            *.rar) unrar x "$1" ;;
+            *.gz) gunzip "$1" ;;
+            *.tar) tar xvf "$1" ;;
+            *.tbz2) tar xvjf "$1" ;;
+            *.tgz) tar xvzf "$1" ;;
+            *.zip) unzip "$1" ;;
+            *.apk) unzip "$1" ;;
+            *.aar) unzip "$1" ;;
+            *.jar) unzip "$1" ;;
+            *.Z) uncompress "$1" ;;
+            *.7z) 7z x "$1" ;;
             *) echo "'$1' cannot be extracted via >extract<"
                return 1 ;;
         esac

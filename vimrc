@@ -244,8 +244,8 @@ set splitright
 
 set background=dark
 let g:solarized_termcolors=256
-"colorscheme molokai
-colorscheme solarized
+colorscheme molokai
+"colorscheme solarized
 
 "If the console is narrow, then I'm probably on a projector =>
 "switch to light colorscheme

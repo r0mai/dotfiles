@@ -137,14 +137,14 @@ function format_xml() {
     xmllint --format "$1" > "$1.tmp" && mv "$1.tmp" "$1"
 }
 
-# From https://gist.github.com/Rob--W/5888648
+# Based on https://gist.github.com/Rob--W/5888648
 function up() {
     if [ -z "$1" ]; then
-        echo "Usage: up [directory]"
-        return
+        cd ..
+    else
+        local upto=$@
+        cd "${PWD/\/$upto\/*//$upto}"
     fi
-    local upto=$@
-    cd "${PWD/\/$upto\/*//$upto}"
 }
 # Auto-completion
 function _up() {

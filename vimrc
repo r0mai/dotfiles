@@ -55,10 +55,6 @@ filetype plugin indent on
 
 set nu
 
-set smartindent
-set tabstop=4
-set expandtab
-set shiftwidth=4
 set colorcolumn=81
 
 set hlsearch
@@ -90,6 +86,12 @@ set breakat-=*
 set breakat+=()
 
 function! SetupEnvironment()
+  " Default case 4 spaces
+  setlocal smartindent
+  setlocal softtabstop=4
+  setlocal expandtab
+  setlocal shiftwidth=4
+
   let l:path = expand('%:p')
   if l:path =~ 'metashell'
     setlocal expandtab smarttab textwidth=0
@@ -105,6 +107,20 @@ function! SetupEnvironment()
   endif
 endfunction
 autocmd! BufReadPost,BufNewFile * call SetupEnvironment()
+
+" allow toggling between local and default mode
+function TabToggle()
+  if &expandtab
+    setlocal shiftwidth=4
+    setlocal softtabstop=0
+    setlocal noexpandtab
+  else
+    setlocal shiftwidth=4
+    setlocal softtabstop=4
+    setlocal expandtab
+  endif
+endfunction
+nmap <F9> mz:execute TabToggle()<CR>'z
 
 nnoremap <S-l> gt
 nnoremap <S-h> gT

@@ -109,9 +109,6 @@ function highlight() {
     fg_c=$(echo -e "\e[1;${fg_color_map[$1]}m")
     c_rs=$'\e[0m'
     sed s"/${2}/${fg_c}&${c_rs}/g"
-
-    echo "fg_c = ${fg_c}"
-    echo "c_rc = ${c_rs}"
 }
 
 function swap() {

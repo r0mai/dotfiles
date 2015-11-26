@@ -279,6 +279,8 @@ else
     export PS1=${PS1_Short}
 fi
 
+export SUGOI_PREFER_GENERATOR="ninja"
+
 export LD_LIBRARY_PATH="/usr/local/lib:${LD_LIBRARY_PATH}"
 export LD_LIBRARY_PATH="/usr/local/lib64:${LD_LIBRARY_PATH}"
 export PYTHONPATH="${DOTFILES_REPO}/ycm_extra_conf.jsondb:${PYTHONPATH}"

@@ -42,9 +42,10 @@ export EDITOR="/usr/bin/vim"
 
 if isOSX; then
     alias readlink='greadlink'
-    alias vim='mvim -v'
-    alias vimdiff='mvim -v -d'
-    export EDITOR='/usr/local/bin/mvim -v'
+    # https://github.com/Valloric/YouCompleteMe/issues/18#issuecomment-13150914
+    alias vim='DYLD_FORCE_FLAT_NAMESPACE=1 mvim -v'
+    alias vimdiff='DYLD_FORCE_FLAT_NAMESPACE=1 mvim -v -d'
+    export EDITOR='DYLD_FORCE_FLAT_NAMESPACE=1 /usr/local/bin/mvim -v'
     if [ -f `brew --prefix`/etc/bash_completion ]; then
         . `brew --prefix`/etc/bash_completion
     fi

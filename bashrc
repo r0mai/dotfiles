@@ -180,6 +180,15 @@ function jd() {
     fi
 }
 
+function git-pull-all() {
+    for d in $(find . -maxdepth 1 -mindepth 1 -type d); do
+        if [ -d "${d}/.git" ]; then
+            echo "-- Pulling from ${d}"
+            git -C "${d}" pull
+        fi
+    done
+}
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth

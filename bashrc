@@ -180,11 +180,16 @@ function jd() {
     fi
 }
 
-function git-pull-all() {
+function git-all() {
+    local command="$@"
+    if [ -z "$command" ]; then
+        echo "Usage git-all <command>"
+        return 1
+    fi
     for d in $(find . -maxdepth 1 -mindepth 1 -type d); do
         if [ -d "${d}/.git" ]; then
-            echo "-- Pulling from ${d}"
-            git -C "${d}" pull
+            echo "-- Entering ${d}"
+            git -C "${d}" ${command}
         fi
     done
 }

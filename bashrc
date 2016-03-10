@@ -248,6 +248,7 @@ done
 alias ccat='pygmentize -g'
 alias v='vim'
 alias g='git'
+alias ga=git-all
 
 # Completion for g (git)
 complete -o bashdefault -o default -o nospace -F __git_wrap__git_main g

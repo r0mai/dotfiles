@@ -153,6 +153,8 @@ function xml_format() {
     xmllint --format "$1" > "$1.tmp" && mv "$1.tmp" "$1"
 }
 
+alias json_format='python -m json.tool'
+
 # Based on https://gist.github.com/Rob--W/5888648
 function up() {
     if [ -z "$1" ]; then

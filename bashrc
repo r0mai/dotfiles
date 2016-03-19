@@ -144,9 +144,9 @@ function adb_pull_all() {
     adb shell ls $1 | tr -s "\r\n" "\0" | xargs -0 -n1 adb pull
 }
 
-function format_xml() {
+function xml_format() {
     if [ $# -ne 1 ]; then
-        echo "Usage: format_xml <xml>"
+        echo "Usage: xml_format <xml>"
         return 1
     fi
 

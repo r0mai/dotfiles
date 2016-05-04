@@ -39,6 +39,9 @@
     f = fetch
     h = help
     m = merge
+    r = rebase
+    ra = rebase --abort
+    rc = rebase --continue
     rl = reflog
     rH = reset HEAD
 

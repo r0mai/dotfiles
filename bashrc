@@ -259,6 +259,16 @@ if command -v hub > /dev/null 2>&1; then
     alias git='hub'
 fi
 
+
+# sugoi related aliases
+if which sugoi-version >/dev/null 2>&1; then
+    alias sd='sugoi-deps'
+    alias ss='sugoi-stash'
+    alias su='sugoi-upgrade'
+    alias sv='sugoi-version'
+    alias st='sugoi-target'
+fi
+
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'

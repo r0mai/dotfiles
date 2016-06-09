@@ -144,6 +144,10 @@ function adb_pull_all() {
     adb shell ls $1 | tr -s "\r\n" "\0" | xargs -0 -n1 adb pull
 }
 
+function adb_paste() {
+    adb shell input keyboard text "$(echo "$@" | sed 's/ /\\ /g' | sed 's/&/\\&/g')"
+}
+
 function xml_format() {
     if [ $# -ne 1 ]; then
         echo "Usage: xml_format <xml>"

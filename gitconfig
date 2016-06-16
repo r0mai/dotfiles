@@ -42,6 +42,7 @@
     r = rebase
     ra = rebase --abort
     rc = rebase --continue
+    ri = rebase --interactive
     rl = reflog
     rH = reset HEAD
 

@@ -74,6 +74,7 @@ set sidescroll=1
 set directory=~/.vim/swp//
 
 set mouse=a
+set ttymouse=sgr " http://superuser.com/questions/485956/clicking-far-away-in-vim-in-tmux-in-urxvt
 
 set wildmode=longest,list,full
 set wildmenu

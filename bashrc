@@ -269,6 +269,9 @@ alias ss='sugoi-stash'
 alias su='sugoi-upgrade'
 alias sv='sugoi-version'
 alias st='sugoi-target'
+alias sg='sugoi-gen'
+alias sm='sugoi-make'
+alias sp='sugoi-prefer'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -309,8 +312,6 @@ if [ $(tput cols) -ge ${short_ps1_threshold} ]; then
 else
     export PS1=${PS1_Short}
 fi
-
-export SUGOI_PREFER_GENERATOR="ninja"
 
 export LD_LIBRARY_PATH="/usr/local/lib:${LD_LIBRARY_PATH}"
 export LD_LIBRARY_PATH="/usr/local/lib64:${LD_LIBRARY_PATH}"

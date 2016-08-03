@@ -266,7 +266,6 @@ fi
 
 alias sd='sugoi-deps'
 alias ss='sugoi-stash'
-alias su='sugoi-upgrade'
 alias sv='sugoi-version'
 alias st='sugoi-target'
 alias sg='sugoi-gen'

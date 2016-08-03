@@ -49,6 +49,7 @@ Plugin 'lyuts/vim-rtags'
 Plugin 'tikhomirov/vim-glsl'
 Plugin 'martong/vim-quick-search'
 Plugin 'r0mai/vim-djinni'
+Plugin 'jeroenbourgois/vim-actionscript'
 
 call vundle#end()
 filetype plugin indent on

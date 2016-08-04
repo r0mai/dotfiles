@@ -35,7 +35,7 @@
     cb = checkout -b
     cp = cherry-pick
     ps = push
-    pl = pull
+    pl = pull --ff-only
     f = fetch
     h = help
     m = merge

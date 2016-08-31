@@ -50,6 +50,7 @@ Plugin 'tikhomirov/vim-glsl'
 Plugin 'martong/vim-quick-search'
 Plugin 'r0mai/vim-djinni'
 Plugin 'jeroenbourgois/vim-actionscript'
+Plugin 'editorconfig/editorconfig-vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -236,6 +237,10 @@ let g:clang_format#style_options = {
   \ "ColumnLimit" : 0,
   \ "Standard" : "C++11",
   \ "BreakBeforeBraces" : "Attach"}
+
+"EditorConfig
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+let g:EditorConfig_exec_path = '/usr/local/bin/editorconfig'
 
 "ClangFormat
 autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>

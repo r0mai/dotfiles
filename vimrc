@@ -132,6 +132,18 @@ nnoremap <F6> :GundoToggle<CR>
 nnoremap <leader>d "_d
 vnoremap <leader>d "_d
 
+" vim -b : edit binary using xxd-format!
+augroup Binary
+  au!
+  au BufReadPre  *.swf let &bin=1
+  au BufReadPost *.swf if &bin | %!xxd
+  au BufReadPost *.swf set ft=xxd | endif
+  au BufWritePre *.swf if &bin | %!xxd -r
+  au BufWritePre *.swf endif
+  au BufWritePost *.swf if &bin | %!xxd
+  au BufWritePost *.swf set nomod | endif
+augroup END
+
 if has('persistent_undo')
   silent !mkdir ~/.vim/backups > /dev/null 2>&1
   set undodir=~/.vim/backups

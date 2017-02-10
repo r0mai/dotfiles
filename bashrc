@@ -252,7 +252,11 @@ for i in {1..10}; do
 done
 
 alias ccat='pygmentize -g'
-alias v='vim'
+if which nvim > /dev/null; then
+    alias v='nvim'
+else
+    alias v='vim'
+fi
 alias g='git'
 alias ga=git-all
 

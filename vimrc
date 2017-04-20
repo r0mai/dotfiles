@@ -51,6 +51,7 @@ Plugin 'martong/vim-quick-search'
 Plugin 'r0mai/vim-djinni'
 Plugin 'jeroenbourgois/vim-actionscript'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'leafgarland/typescript-vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -247,6 +248,9 @@ let g:clang_format#style_options = {
 "EditorConfig
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 let g:EditorConfig_exec_path = '/usr/local/bin/editorconfig'
+
+"TypeScript filetype detection
+autocmd BufNewFile,BufRead *.ts set syntax=typescript
 
 "ClangFormat
 autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>

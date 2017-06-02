@@ -1,36 +1,3 @@
-# Normal Colors
-Black='\[\e[0;30m\]'
-Red='\[\e[0;31m\]'
-Green='\[\e[0;32m\]'
-Yellow='\[\e[0;33m\]'
-Blue='\[\e[0;34m\]'
-Purple='\[\e[0;35m\]'
-Cyan='\[\e[0;36m\]'
-White='\[\e[0;37m\]'
-
-# Bold
-BBlack='\[\e[1;30m\]'
-BRed='\[\e[1;31m\]'
-BGreen='\[\e[1;32m\]'
-BYellow='\[\e[1;33m\]'
-BBlue='\[\e[1;34m\]'
-BPurple='\[\e[1;35m\]'
-BCyan='\[\e[1;36m\]'
-BWhite='\[\e[1;37m\]'
-
-# Background
-On_Black='\[\e[40m\]'
-On_Red='\[\e[41m\]'
-On_Green='\[\e[42m\]'
-On_Yellow='\[\e[43m\]'
-On_Blue='\[\e[44m\]'
-On_Purple='\[\e[45m\]'
-On_Cyan='\[\e[46m\]'
-On_White='\[\e[47m\]'
-
-# Color Reset
-NC="\[\e[m\]"
-
 function isOSX() {
     if [ "$(uname)" == "Darwin" ]; then
         return 0
@@ -291,17 +258,6 @@ PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
-#STUFF for PS1
-function getShortPath() {
-    offset=$1
-    let "path_length=$(tput cols) - $offset"
-    echo -n $PWD | sed "s#^$HOME#~#g" | awk -v MAX_LENGTH=${path_length} -f "${DOTFILES_REPO}/short_path.awk"
-}
-
-source "${DOTFILES_REPO}/git-prompt.sh"
-
-PS1_versionControl='$(__git_ps1 " (%s)")'
-
 #swap file location for vim
 mkdir -p ~/.vim/swp
 
@@ -311,14 +267,10 @@ alias getTime='date +"[%k:%M:%S"]'
 
 alias tmux="TERM=screen-256color-bce tmux"
 
-short_ps1_threshold=50
-
-PS1_Long="${Cyan}"'$(getTime)'" ${BPurple}\h${NC}${NC}${BRed}${PS1_versionControl}${NC} : ${BGreen}"'$(getShortPath ${short_ps1_threshold})'"${NC}\n${BRed}\$${NC} "
-PS1_Short="${BGreen}"'$(getShortPath ${short_ps1_threshold})'"${NC}\n${BRed}\$${NC} "
-if [ $(tput cols) -ge ${short_ps1_threshold} ]; then
-    export PS1=${PS1_Long}
-else
-    export PS1=${PS1_Short}
+# https://github.com/magicmonty/bash-git-prompt
+if [ -f "/usr/local/opt/bash-git-prompt/share/gitprompt.sh" ]; then
+  __GIT_PROMPT_DIR="/usr/local/opt/bash-git-prompt/share"
+  source "/usr/local/opt/bash-git-prompt/share/gitprompt.sh"
 fi
 
 export LD_LIBRARY_PATH="/usr/local/lib:${LD_LIBRARY_PATH}"

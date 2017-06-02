@@ -234,7 +234,6 @@ alias ga=git-all
 complete -o bashdefault -o default -o nospace -F __git_wrap__git_main g
 if command -v hub > /dev/null 2>&1; then
     eval "$(hub alias -s)"
-    alias git='hub'
 fi
 
 

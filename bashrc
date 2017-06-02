@@ -246,8 +246,6 @@ alias sg='sugoi-gen'
 alias sm='sugoi-make'
 alias sp='sugoi-prefer'
 
-export SUGOI_PREFER_GENERATOR="ninja"
-
 #update history in real time
 shopt -s histappend
 PROMPT_COMMAND="history -a;$PROMPT_COMMAND"

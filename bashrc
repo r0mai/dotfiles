@@ -244,6 +244,7 @@ alias st='sugoi-target'
 alias sg='sugoi-gen'
 alias sm='sugoi-make'
 alias sp='sugoi-prefer'
+alias rat='remake all tests'
 
 #update history in real time
 shopt -s histappend

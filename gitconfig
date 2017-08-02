@@ -47,7 +47,10 @@
     rl = reflog
     rH = reset HEAD
 
-    #list aliases
+    # hub
+    pr = pull-request
+
+    # list aliases
     la = "!git config -l | grep alias | cut -c 7-"
 [merge]
     conflictstyle = diff3

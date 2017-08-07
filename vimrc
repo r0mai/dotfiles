@@ -70,6 +70,11 @@ set history=1000
 set autoread
 set hidden
 
+" https://unix.stackexchange.com/a/383044
+autocmd CursorHold,CursorHoldI,FocusGained,BufEnter * checktime
+autocmd FileChangedShellPost *
+  \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
+
 set scrolloff=8
 set sidescrolloff=15
 set sidescroll=1

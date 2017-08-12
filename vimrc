@@ -272,6 +272,7 @@ let g:airline_powerline_fonts = 1
 
 "vim-session
 let g:session_autosave = 'no'
+let g:session_autoload = 'no'
 
 set t_Co=256
 let g:rehash256 = 1

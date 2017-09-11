@@ -53,7 +53,10 @@
     # list aliases
     la = "!git config -l | grep alias | cut -c 7-"
 [merge]
+    tool = vimdiff
     conflictstyle = diff3
+[mergetool "vimdiff"]
+    cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [diff]
     algorithm = patience
 [color]

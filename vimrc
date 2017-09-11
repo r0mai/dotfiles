@@ -262,9 +262,8 @@ autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
 autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
 
 "vim-compiledb-path
-autocmd VimEnter CompileDbPathIfExists 'build/osx_x64_debug/make/compile_commands.json'
 autocmd VimEnter CompileDbPathIfExists 'bin/compile_commands.json'
-autocmd VimEnter CompileDbPathIfExists 'build/osx_x64_debug/ninja/compile_commands.json'
+autocmd VimEnter CompileDbPathIfExists 'build/osx-x64-ninja-debug/ninja/compile_commands.json'
 autocmd VimEnter CompileDbPathIfExists 'build/compile_commands.json'
 
 "airline

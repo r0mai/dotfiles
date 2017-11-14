@@ -9,7 +9,7 @@
 dir=~/dotfiles # dotfiles directory
 olddir=~/dotfiles_old # old dotfiles backup directory
 # list of files/folders to symlink in homedir
-files="bashrc vimrc vim gitconfig gitignore_global tmux.conf ycm_extra_conf.py config/nvim, config/nvim/init.vim"
+files="bashrc vimrc vim gitconfig gitignore_global tmux.conf ycm_extra_conf.py config/nvim, config/nvim/init.vim git-prompt-colors.sh"
 
 ##########
 

@@ -263,8 +263,8 @@ alias tmux="TERM=screen-256color-bce tmux"
 
 # https://github.com/magicmonty/bash-git-prompt
 if [ -f "/usr/local/opt/bash-git-prompt/share/gitprompt.sh" ]; then
-  __GIT_PROMPT_DIR="/usr/local/opt/bash-git-prompt/share"
-  source "/usr/local/opt/bash-git-prompt/share/gitprompt.sh"
+    GIT_PROMP_THEME="Custom"
+    source "/usr/local/opt/bash-git-prompt/share/gitprompt.sh"
 fi
 
 export LD_LIBRARY_PATH="/usr/local/lib:${LD_LIBRARY_PATH}"

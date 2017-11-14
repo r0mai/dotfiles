@@ -205,7 +205,7 @@ let g:ctrlp_working_path_mode = ''
 set wildignore+=*.so,*.swp,*.zip,*.o,build/*
 let g:ctrlp_max_files = 0
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](build)|(\.(git|hg|svn))$',
+  \ 'dir':  '\v[\/](build)|(\.(git|hg|svn))|(sample-viewer_data)|(test-client_data)$',
   \ 'file': '\v\.(exe|so|dll)$',
   \ 'link': 'some_bad_symbolic_links',
   \ }

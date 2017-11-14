@@ -223,8 +223,8 @@ map <Leader>tl :TlistToggle<CR>
 let g:quickSearch_FindCommand = 'LAg! --cpp'
 
 "YouCompleteMe Config
-map gd :YcmCompleter GoToDefinitionElseDeclaration<CR>
-map gi :YcmCompleter GoToImprecise<CR>
+map <Leader>gd :YcmCompleter GoToDefinition<CR>
+map <Leader>gi :YcmCompleter GoToImprecise<CR>
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_key_invoke_completion = '<C-Space>'

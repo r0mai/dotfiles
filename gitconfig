@@ -66,7 +66,7 @@
 [core]
     excludesfile = ~/.gitignore_global
     pager = less -x1,5
-    editor = "/usr/local/bin/mvim -v"
+    editor = "/usr/bin/vi"
 [advice]
     pushNonFastForward = false
     detachedHead = false

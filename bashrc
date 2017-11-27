@@ -264,6 +264,7 @@ alias tmux="TERM=screen-256color-bce tmux"
 # https://github.com/magicmonty/bash-git-prompt
 if [ -f "/usr/local/opt/bash-git-prompt/share/gitprompt.sh" ]; then
     GIT_PROMP_THEME="Custom"
+    GIT_PROMPT_FETCH_REMOTE_STATUS=0
     source "/usr/local/opt/bash-git-prompt/share/gitprompt.sh"
 fi
 

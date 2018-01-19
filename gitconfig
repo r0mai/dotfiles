@@ -70,3 +70,7 @@
 [advice]
     pushNonFastForward = false
     detachedHead = false
+[commit]
+    gpgsign = true
+[gpg]
+    program = gpg

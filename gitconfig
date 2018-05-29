@@ -71,6 +71,6 @@
     pushNonFastForward = false
     detachedHead = false
 [commit]
-    gpgsign = true
+    # gpgsign = true
 [gpg]
     program = gpg

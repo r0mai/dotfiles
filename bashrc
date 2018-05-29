@@ -10,9 +10,9 @@ export EDITOR="/usr/bin/vim"
 if isOSX; then
     alias readlink='greadlink'
     # https://github.com/Valloric/YouCompleteMe/issues/18#issuecomment-13150914
-    alias vim='DYLD_FORCE_FLAT_NAMESPACE=1 mvim -v'
-    alias vimdiff='DYLD_FORCE_FLAT_NAMESPACE=1 mvim -v -d'
-    export EDITOR='DYLD_FORCE_FLAT_NAMESPACE=1 /usr/local/bin/mvim -v'
+    # alias vim='DYLD_FORCE_FLAT_NAMESPACE=1 mvim -v'
+    # alias vimdiff='DYLD_FORCE_FLAT_NAMESPACE=1 mvim -v -d'
+    # export EDITOR='DYLD_FORCE_FLAT_NAMESPACE=1 /usr/local/bin/mvim -v'
     if [ -f `brew --prefix`/etc/bash_completion ]; then
         . `brew --prefix`/etc/bash_completion
     fi
@@ -175,7 +175,7 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # don't escape $ when tabbing
-shopt -s direxpand
+# shopt -s direxpand
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=10000

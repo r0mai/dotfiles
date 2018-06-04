@@ -9,10 +9,7 @@ export EDITOR="/usr/bin/vim"
 
 if isOSX; then
     alias readlink='greadlink'
-    # https://github.com/Valloric/YouCompleteMe/issues/18#issuecomment-13150914
-    # alias vim='DYLD_FORCE_FLAT_NAMESPACE=1 mvim -v'
-    # alias vimdiff='DYLD_FORCE_FLAT_NAMESPACE=1 mvim -v -d'
-    # export EDITOR='DYLD_FORCE_FLAT_NAMESPACE=1 /usr/local/bin/mvim -v'
+    export PATH="/Applications/MacVim.app/Contents/bin:${PATH}"
     if [ -f `brew --prefix`/etc/bash_completion ]; then
         . `brew --prefix`/etc/bash_completion
     fi
@@ -222,11 +219,7 @@ for i in {1..10}; do
 done
 
 alias ccat='pygmentize -g'
-if which nvim > /dev/null; then
-    alias v='nvim'
-else
-    alias v='vim'
-fi
+alias v='vim'
 alias g='git'
 alias ga=git-all
 

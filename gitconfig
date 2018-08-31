@@ -62,7 +62,7 @@
 [color]
     ui = auto
 [push]
-    default = simple
+    default = current
 [core]
     excludesfile = ~/.gitignore_global
     pager = less -x1,5

@@ -223,6 +223,7 @@ map <Leader>tl :TlistToggle<CR>
 let g:quickSearch_FindCommand = 'LAg! --cpp'
 
 "YouCompleteMe Config
+" let g:loaded_youcompleteme = 1 " disables ycm
 map <Leader>gd :YcmCompleter GoToDefinition<CR>
 map <Leader>gi :YcmCompleter GoToImprecise<CR>
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'

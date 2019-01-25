@@ -11,7 +11,7 @@ call vundle#begin()
 
 let g:vundle_default_git_proto = 'git'
 
-Plugin 'nacitar/a.vim'
+Plugin 'derekwyatt/vim-fswitch'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'vim-scripts/taglist.vim'
 Plugin 'scrooloose/nerdtree'
@@ -181,6 +181,11 @@ if has("user_commands")
   command! -nargs=? -complete=file HN new <args>
   command! -nargs=? -complete=file Te tabedit <args>
   command! -nargs=? -complete=file TE tabedit <args>
+
+  "vim-fswitch
+  command! A :FSHere
+  command! Av :FSSplitRight
+  command! AV :FSSplitRight
 endif
 
 command Bc execute "bufdo checktime"

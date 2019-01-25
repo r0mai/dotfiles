@@ -246,8 +246,6 @@ alias rat='remake all tests'
 shopt -s histappend
 PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 
-test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
-
 #swap file location for vim
 mkdir -p ~/.vim/swp
 

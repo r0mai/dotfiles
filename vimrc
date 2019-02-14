@@ -272,6 +272,9 @@ autocmd VimEnter CompileDbPathIfExists 'bin/compile_commands.json'
 autocmd VimEnter CompileDbPathIfExists 'build/osx-x64-ninja-debug/ninja/compile_commands.json'
 autocmd VimEnter CompileDbPathIfExists 'build/compile_commands.json'
 
+" highlight vs fs with vim-glsl
+autocmd! BufNewFile,BufRead *.vs,*.fs set ft=glsl
+
 "airline
 let g:airline_powerline_fonts = 1
 

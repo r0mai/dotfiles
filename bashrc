@@ -255,6 +255,9 @@ alias getTime='date +"[%k:%M:%S"]'
 
 alias tmux="TERM=screen-256color-bce tmux"
 
+## vi nav mode
+#set -o vi
+
 # https://github.com/magicmonty/bash-git-prompt
 if [ -f "/usr/local/opt/bash-git-prompt/share/gitprompt.sh" ]; then
     GIT_PROMP_THEME="Custom"

@@ -22,6 +22,8 @@ fi
 #git repo location
 DOTFILES_REPO="$(dirname $(readlink -f ${BASH_SOURCE[0]}))"
 
+export PATH="${PATH}:${DOTFILES_REPO}/bin"
+
 #apparently this is not obvious
 export SHELL="/bin/bash"
 

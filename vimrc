@@ -52,6 +52,7 @@ Plugin 'r0mai/vim-djinni'
 Plugin 'jeroenbourgois/vim-actionscript'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'tpope/vim-surround'
 
 call vundle#end()
 filetype plugin indent on

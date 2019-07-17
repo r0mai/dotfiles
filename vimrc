@@ -30,6 +30,7 @@ Plugin 'xolox/vim-misc.git'
 Plugin 'justinmk/vim-sneak.git'
 Plugin 'vim-scripts/YankRing.vim.git'
 Plugin 'ntpeters/vim-better-whitespace.git'
+" Install powerline fonts: https://superuser.com/questions/762345/powerline-patched-fonts-on-osx-10-9-3-iterm2-chrome
 Plugin 'bling/vim-airline.git'
 Plugin 'airblade/vim-gitgutter.git'
 Plugin 'wesQ3/vim-windowswap'

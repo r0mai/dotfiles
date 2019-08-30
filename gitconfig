@@ -66,7 +66,7 @@
 [core]
     excludesfile = ~/.gitignore_global
     pager = less -x1,5
-    editor = "/usr/bin/vi"
+    editor = "/Applications/MacVim.app/Contents/bin/vim"
 [advice]
     pushNonFastForward = false
     detachedHead = false

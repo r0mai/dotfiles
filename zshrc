@@ -97,3 +97,11 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+if command -v hub > /dev/null 2>&1; then
+    eval "$(hub alias -s)"
+fi
+
+if test -f ~/.bashrc_local; then
+    source ~/.bashrc_local
+fi

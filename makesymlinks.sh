@@ -12,7 +12,10 @@ set -x
 dir=~/dotfiles # dotfiles directory
 olddir=~/dotfiles_old # old dotfiles backup directory
 # list of files/folders to symlink in homedir
-files="bash_profile bashrc vimrc vim gitconfig gitignore_global tmux.conf ycm_extra_conf.py config/nvim/init.vim git-prompt-colors.sh"
+
+# commented out when transitioning form bash to zsh
+# files="bash_profile bashrc vimrc vim gitconfig gitignore_global ycm_extra_conf.py config/nvim/init.vim git-prompt-colors.sh"
+files="zshrc vimrc vim gitconfig gitignore_global ycm_extra_conf.py"
 
 ##########
 

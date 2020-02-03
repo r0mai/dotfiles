@@ -12,7 +12,7 @@ set -x
 dir=~/dotfiles # dotfiles directory
 olddir=~/dotfiles_old # old dotfiles backup directory
 # list of files/folders to symlink in homedir
-files="bash_profile bashrc vimrc vim gitconfig gitignore_global tmux.conf ycm_extra_conf.py config/nvim, config/nvim/init.vim git-prompt-colors.sh"
+files="bash_profile bashrc vimrc vim gitconfig gitignore_global tmux.conf ycm_extra_conf.py config/nvim/init.vim git-prompt-colors.sh"
 
 ##########
 
@@ -25,8 +25,6 @@ echo "done"
 echo -n "Changing to the $dir directory ..."
 cd $dir
 echo "done"
-
-mkdir -p ~/.config/nvim
 
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks from the homedir to any files in the ~/dotfiles directory specified in $files
 echo "Moving any existing dotfiles from ~ to $olddir"

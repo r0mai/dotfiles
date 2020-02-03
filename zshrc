@@ -98,6 +98,68 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+function extract() {
+    if [ -f "$1" ] ; then
+        case "$1" in
+            *.tar.lz) tar xvf "$1" ;;
+            *.tar.bz2) tar xvjf "$1" ;;
+            *.tar.gz) tar xvzf "$1" ;;
+            *.tar.xz) tar xvJf "$1" ;;
+            *.bz2) bunzip2 "$1" ;;
+            *.rar) unrar x "$1" ;;
+            *.gz) gunzip "$1" ;;
+            *.tar) tar xvf "$1" ;;
+            *.tbz2) tar xvjf "$1" ;;
+            *.tgz) tar xvzf "$1" ;;
+            *.zip) unzip "$1" ;;
+            *.apk) unzip "$1" ;;
+            *.aar) unzip "$1" ;;
+            *.jar) unzip "$1" ;;
+            *.Z) uncompress "$1" ;;
+            *.7z) 7z x "$1" ;;
+            *) echo "'$1' cannot be extracted via >extract<"
+               return 1 ;;
+        esac
+    else
+        echo "'$1' is not a valid file!"
+        return 1
+    fi
+}
+
+function mkcd() {
+    mkdir -p -- "$1" && cd -P -- "$1"
+}
+
+function adb_paste() {
+    adb shell input keyboard text "$(echo "$@" | sed 's/ /\\ /g' | sed 's/&/\\&/g')"
+}
+
+function format_xml() {
+    if [ $# -ne 1 ]; then
+        echo "Usage: xml_format <xml>"
+        return 1
+    fi
+
+    xmllint --format "$1" > "$1.tmp" && mv "$1.tmp" "$1"
+}
+
+#swap file location for vim
+mkdir -p ~/.vim/swp
+
+#vim
+alias v='vim'
+
+#sugoi
+alias sd='sugoi-deps'
+alias ss='sugoi-stash'
+alias sv='sugoi-version'
+alias st='sugoi-target'
+alias sg='sugoi-gen'
+alias sm='sugoi-make'
+alias sp='sugoi-prefer'
+alias rat='remake all tests'
+
+# hub github.com/github/hub
 if command -v hub > /dev/null 2>&1; then
     eval "$(hub alias -s)"
 fi

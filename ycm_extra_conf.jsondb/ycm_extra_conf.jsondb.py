@@ -1,16 +1,29 @@
-import ycm_jsondb_core
 import os
 
-# Set this to the absolute path to the folder (NOT the file!) containing the
-# compile_commands.json file to use that instead of 'flags'. See here for
-# more details: http://clang.llvm.org/docs/JSONCompilationDatabase.html
-compilation_database_folder = 'native-editor/build/osx_x64_debug/make'
 
 def DirectoryOfThisScript():
-  return os.path.dirname( os.path.abspath( __file__ ) )
+    return os.path.dirname(os.path.abspath(__file__))
 
+import sys
+sys.path.insert(0, DirectoryOfThisScript())
+
+import ycm_jsondb_config
+
+# By default, the compilation database is in the current folder (usually the
+# project root). It can be changed from the ycm_jsondb_config sctipt via the
+# GetCompilationDatabaseFolder function. If you are using a centralized config
+# file and have the compilation database in another place than the current
+# folder, then modify it here (but remember not to symlink this file when
+# installing).
+if "GetCompilationDatabaseFolder" in dir(ycm_jsondb_config):
+    compilation_database_folder = ycm_jsondb_config.GetCompilationDatabaseFolder(
+        DirectoryOfThisScript())
+else:
+    compilation_database_folder = DirectoryOfThisScript()
+
+import ycm_jsondb_core
 ycm_jsondb_core.Init(compilation_database_folder)
 
-def FlagsForFile( filename, **kwargs ):
-  return ycm_jsondb_core.FlagsForFile(filename, DirectoryOfThisScript())
 
+def FlagsForFile(filename, **kwargs):
+    return ycm_jsondb_core.FlagsForFile(filename, DirectoryOfThisScript())

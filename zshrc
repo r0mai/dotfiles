@@ -12,6 +12,10 @@ export ZSH="/Users/r0mai/.oh-my-zsh"
 # to install this: git clone https://github.com/Powerlevel9k/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
+# Installed this https://github.com/ryanoasis/nerd-fonts
+# and selected the nerd font in preferences
+POWERLEVEL9K_MODE='nerdfont-complete'
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/

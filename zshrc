@@ -98,6 +98,17 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+function is_osx() {
+    if test "$(uname)" = "Darwin"; then
+         return 0
+    fi
+    return 1
+}
+
+if is_osx; then
+    export PATH="/Applications/MacVim.app/Contents/bin:${PATH}"
+fi
+
 function extract() {
     if [ -f "$1" ] ; then
         case "$1" in

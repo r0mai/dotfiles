@@ -8,7 +8,9 @@ export ZSH="/Users/r0mai/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+
+# to install this: git clone https://github.com/Powerlevel9k/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -98,6 +100,10 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# powerlevel9k theme customization
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs newline)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status history time)
+
 function is_osx() {
     if test "$(uname)" = "Darwin"; then
          return 0
@@ -108,6 +114,9 @@ function is_osx() {
 if is_osx; then
     export PATH="/Applications/MacVim.app/Contents/bin:${PATH}"
 fi
+
+#git repo location
+export DOTFILES_REPO=~/dotfiles
 
 function extract() {
     if [ -f "$1" ] ; then
@@ -153,6 +162,10 @@ function format_xml() {
 
     xmllint --format "$1" > "$1.tmp" && mv "$1.tmp" "$1"
 }
+
+# setup python for
+# https://github.com/martong/ycm_extra_conf.jsondb
+export PYTHONPATH="${DOTFILES_REPO}/ycm_extra_conf.jsondb:${PYTHONPATH}"
 
 #swap file location for vim
 mkdir -p ~/.vim/swp

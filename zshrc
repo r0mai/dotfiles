@@ -105,8 +105,9 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # powerlevel9k theme customization
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs newline)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status history time)
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 
 function is_osx() {
     if test "$(uname)" = "Darwin"; then
@@ -148,6 +149,21 @@ function extract() {
         echo "'$1' is not a valid file!"
         return 1
     fi
+}
+
+
+function git-all() {
+    local command="$@"
+    if [ -z "$command" ]; then
+        echo "Usage git-all <command>"
+        return 1
+    fi
+    for d in $(find . -maxdepth 1 -mindepth 1 -type d); do
+        if [ -d "${d}/.git" ]; then
+            echo "-- Entering ${d}"
+            git -C "${d}" ${=command}
+        fi
+    done
 }
 
 function mkcd() {

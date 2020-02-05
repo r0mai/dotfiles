@@ -45,7 +45,6 @@ Plugin 'tfnico/vim-gradle'
 Plugin 'vim-jp/cpp-vim'
 Plugin 'martong/vim-compiledb-path'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'JazzCore/ctrlp-cmatcher'
 Plugin 'jdonaldson/vaxe'
 Plugin 'lyuts/vim-rtags'
 Plugin 'tikhomirov/vim-glsl'
@@ -212,12 +211,14 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = ''
 set wildignore+=*.so,*.swp,*.zip,*.o,build/*
 let g:ctrlp_max_files = 0
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](build)|(\.(git|hg|svn))|(sample-viewer_data)|(test-client_data)|(node_modules)|(Pods)$',
   \ 'file': '\v\.(exe|so|dll)$',
   \ 'link': 'some_bad_symbolic_links',
   \ }
-let g:ctrlp_match_func = {'match' : 'matcher#cmatch' }
 
 "NERDTree
 map <Leader>n <plug>NERDTreeMirrorToggle<CR>

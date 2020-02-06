@@ -107,6 +107,9 @@ function format_xml() {
     xmllint --format "$1" > "$1.tmp" && mv "$1.tmp" "$1"
 }
 
+# Fancy Ctrl+R (brew install fzf, then /usr/local/opt/fzf/install)
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # setup python for
 # https://github.com/martong/ycm_extra_conf.jsondb
 export PYTHONPATH="${DOTFILES_REPO}/ycm_extra_conf.jsondb:${PYTHONPATH}"

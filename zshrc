@@ -110,6 +110,13 @@ function format_xml() {
 # Fancy Ctrl+R (brew install fzf, then /usr/local/opt/fzf/install)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# brew install nvm
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
+
+# https://iterm2.com/documentation-shell-integration.html
+# curl -L https://iterm2.com/shell_integration/zsh -o ~/.iterm2_shell_integration.zsh
+source ~/.iterm2_shell_integration.zsh
+
 # setup python for
 # https://github.com/martong/ycm_extra_conf.jsondb
 export PYTHONPATH="${DOTFILES_REPO}/ycm_extra_conf.jsondb:${PYTHONPATH}"

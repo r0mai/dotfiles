@@ -11,44 +11,32 @@ call vundle#begin()
 
 let g:vundle_default_git_proto = 'git'
 
-Plugin 'derekwyatt/vim-fswitch'
 Plugin 'gmarik/Vundle.vim'
-Plugin 'vim-scripts/taglist.vim'
+Plugin 'derekwyatt/vim-fswitch'
 Plugin 'scrooloose/nerdtree'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-fugitive'
-Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'r0mai/molokai'
-Plugin 'kana/vim-operator-user'
 Plugin 'Valloric/YouCompleteMe.git'
 Plugin 'tomtom/tcomment_vim.git'
 Plugin 'tpope/vim-endwise.git'
 Plugin 'tomtom/tlib_vim.git'
-Plugin 'MarcWeber/vim-addon-mw-utils.git'
-Plugin 'xolox/vim-session.git'
-Plugin 'xolox/vim-misc.git'
 Plugin 'justinmk/vim-sneak.git'
 Plugin 'vim-scripts/YankRing.vim.git'
-Plugin 'ntpeters/vim-better-whitespace.git'
+" Plugin 'ntpeters/vim-better-whitespace.git'
 " Installed this (also needed for powerlevel9k zsh fonts) https://github.com/ryanoasis/nerd-fonts
 Plugin 'bling/vim-airline.git'
 Plugin 'airblade/vim-gitgutter.git'
 Plugin 'wesQ3/vim-windowswap'
 Plugin 'vim-scripts/Rename'
-Plugin 'tpope/vim-sleuth'
 Plugin 'rking/ag.vim'
 Plugin 'jremmen/vim-ripgrep'
-Plugin 'sjl/gundo.vim'
-Plugin 'BufOnly.vim'
-Plugin 'scrooloose/nerdcommenter'
 Plugin 'tfnico/vim-gradle'
-Plugin 'vim-jp/cpp-vim'
+" Plugin 'vim-jp/cpp-vim'
 Plugin 'martong/vim-compiledb-path'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'jdonaldson/vaxe'
-Plugin 'lyuts/vim-rtags'
+" Plugin 'lyuts/vim-rtags'
 Plugin 'tikhomirov/vim-glsl'
-Plugin 'martong/vim-quick-search'
 Plugin 'r0mai/vim-djinni'
 Plugin 'jeroenbourgois/vim-actionscript'
 Plugin 'editorconfig/editorconfig-vim'
@@ -227,9 +215,6 @@ let NERDTreeIgnore = ['\.pyc$', '\.o$']
 "taglist
 let Tlist_Use_Right_Window = 1
 map <Leader>tl :TlistToggle<CR>
-
-"martong/vim-quick-search
-let g:quickSearch_FindCommand = 'LAg! --cpp'
 
 "YouCompleteMe Config
 " let g:loaded_youcompleteme = 1 " disables ycm

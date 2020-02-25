@@ -108,7 +108,18 @@ function format_xml() {
 }
 
 # Fancy Ctrl+R (brew install fzf, then /usr/local/opt/fzf/install)
+export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always {}'"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# git fzf integration
+# https://gist.github.com/junegunn/8b572b8d4b5eddd8b85e5f4d40f17236
+# defined aliases:
+# ^G ^F: files (gf)
+# ^G ^B: brances (gb)
+# ^G ^T: tags (gt)
+# ^G ^R: remotes (gr)
+# ^G ^H: hashes (gh)
+source "${DOTFILES_REPO}/fzf-git.sh"
 
 # brew install nvm
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"

@@ -22,8 +22,6 @@ Plugin 'tomtom/tcomment_vim.git'
 Plugin 'tpope/vim-endwise.git'
 Plugin 'tomtom/tlib_vim.git'
 Plugin 'justinmk/vim-sneak.git'
-Plugin 'vim-scripts/YankRing.vim.git'
-" Plugin 'ntpeters/vim-better-whitespace.git'
 " Installed this (also needed for powerlevel9k zsh fonts) https://github.com/ryanoasis/nerd-fonts
 Plugin 'bling/vim-airline.git'
 Plugin 'airblade/vim-gitgutter.git'
@@ -32,10 +30,8 @@ Plugin 'vim-scripts/Rename'
 Plugin 'rking/ag.vim'
 Plugin 'jremmen/vim-ripgrep'
 Plugin 'tfnico/vim-gradle'
-" Plugin 'vim-jp/cpp-vim'
 Plugin 'martong/vim-compiledb-path'
-Plugin 'ctrlpvim/ctrlp.vim'
-" Plugin 'lyuts/vim-rtags'
+Plugin 'junegunn/fzf' " https://github.com/junegunn/fzf/blob/master/README-VIM.md
 Plugin 'tikhomirov/vim-glsl'
 Plugin 'r0mai/vim-djinni'
 Plugin 'jeroenbourgois/vim-actionscript'
@@ -193,20 +189,7 @@ map <leader>e :e<CR>
 "quiting
 map <leader>q :q<CR>
 
-"CtrlP
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_working_path_mode = ''
-set wildignore+=*.so,*.swp,*.zip,*.o,build/*
-let g:ctrlp_max_files = 0
-if executable('ag')
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-endif
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](build)|(\.(git|hg|svn))|(sample-viewer_data)|(test-client_data)|(node_modules)|(Pods)$',
-  \ 'file': '\v\.(exe|so|dll)$',
-  \ 'link': 'some_bad_symbolic_links',
-  \ }
+nmap <c-p> :FZF<CR>
 
 "NERDTree
 map <Leader>n <plug>NERDTreeMirrorToggle<CR>

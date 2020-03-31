@@ -156,6 +156,9 @@ if command -v hub > /dev/null 2>&1; then
     eval "$(hub alias -s)"
 fi
 
+# Tells 'less' not to paginate if less than a page
+export LESS="-F -X $LESS"
+
 if test -f ~/.bashrc_local; then
     source ~/.bashrc_local
 fi

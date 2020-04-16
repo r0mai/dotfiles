@@ -201,7 +201,10 @@ map <Leader>tl :TlistToggle<CR>
 
 "YouCompleteMe Config
 " let g:loaded_youcompleteme = 1 " disables ycm
-map <Leader>gd :YcmCompleter GoToDefinition<CR>
+let g:ycm_goto_buffer_command = 'split'
+map <Leader>gd :YcmCompleter GoTo<CR>
+map <Leader>gt :tab YcmCompleter GoTo<CR>
+map <Leader>gv :rightbelow vertical YcmCompleter GoTo<CR>
 map <Leader>gi :YcmCompleter GoToImprecise<CR>
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 let g:ycm_autoclose_preview_window_after_completion = 1

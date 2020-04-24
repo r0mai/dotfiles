@@ -151,6 +151,9 @@ export PYTHONPATH="${DOTFILES_REPO}/ycm_extra_conf.jsondb:${PYTHONPATH}"
 #swap file location for vim
 mkdir -p ~/.vim/swp
 
+#export EDITOR for github's gh CLI tool
+export EDITOR='vim'
+
 #vim
 alias v='vim'
 

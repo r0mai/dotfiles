@@ -134,7 +134,11 @@ export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always {}'"
 source "${DOTFILES_REPO}/fzf-git.sh"
 
 # brew install nvm
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
+enable-nvm() {
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+    [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+}
 
 # https://iterm2.com/documentation-shell-integration.html
 # curl -L https://iterm2.com/shell_integration/zsh -o ~/.iterm2_shell_integration.zsh

@@ -90,6 +90,18 @@ function git-all() {
     done
 }
 
+# usage gh_approve https://github.com/user/repo/pull/1234
+function gh_approve() {
+    while (( "$#" )); do
+        local url="$1"
+        local api_url="$(echo "${url}" | sed 's#https://github.com/\([^/]*\)/\([^/]*\)/pull/\([^/]*\)#https://api.github.com/repos/\1/\2/pulls/\3/reviews#g')"
+
+        curl -H "Authorization: token ${GITHUB_TOKEN}" "${api_url}" -d '{ "event": "APPROVE" }'
+
+        shift
+    done
+}
+
 function mkcd() {
     mkdir -p -- "$1" && cd -P -- "$1"
 }

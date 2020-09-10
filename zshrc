@@ -62,6 +62,7 @@ function extract() {
             *.tgz) tar xvzf "$1" ;;
             *.zip) unzip "$1" ;;
             *.pvl) unzip "$1" ;;
+            *.pv) unzip "$1" ;;
             *.apk) unzip "$1" ;;
             *.aar) unzip "$1" ;;
             *.jar) unzip "$1" ;;

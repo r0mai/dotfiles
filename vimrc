@@ -206,11 +206,14 @@ map <Leader>gd :YcmCompleter GoTo<CR>
 map <Leader>gt :tab YcmCompleter GoTo<CR>
 map <Leader>gv :rightbelow vertical YcmCompleter GoTo<CR>
 map <Leader>gi :YcmCompleter GoToImprecise<CR>
+ " Show documentation popup
+nmap <leader>D <plug>(YCMHover)
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_key_invoke_completion = '<C-Space>'
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_enable_diagnostic_signs = 0
+let g:ycm_auto_hover = -1 " this turns off auto hover pop-ups (<leader>D still works)
 
 " settings from https://clang.llvm.org/extra/clangd/Installation.html
 let g:ycm_clangd_uses_ycmd_caching = 0

@@ -124,6 +124,8 @@ function format_xml() {
 export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always {}'"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+export FZF_DEFAULT_COMMAND='rg --files --hidden'
+
 # git fzf integration
 # https://gist.github.com/junegunn/8b572b8d4b5eddd8b85e5f4d40f17236
 # defined aliases:
@@ -181,4 +183,13 @@ export LESS="-F -X $LESS"
 
 if test -f ~/.bashrc_local; then
     source ~/.bashrc_local
+fi
+alias bach="/Users/r0mai/prezi/frontend-packages/node_modules/.bin/bach"
+alias ci="/Users/r0mai/prezi/frontend-packages/node_modules/.bin/ci"
+
+if which lsd > /dev/null; then
+    unalias la
+    unalias ll
+    alias la="lsd -la"
+    alias ll="lsd -l"
 fi

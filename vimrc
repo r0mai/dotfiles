@@ -220,6 +220,7 @@ set completeopt-=preview " this turns off YCM opening a small window after every
 " settings from https://clang.llvm.org/extra/clangd/Installation.html
 let g:ycm_clangd_uses_ycmd_caching = 0
 let g:ycm_clangd_binary_path = '/usr/local/opt/llvm/bin/clangd' " install with brew install llvm
+let g:ycm_clangd_args=['--header-insertion=never']
 
 let g:ycm_semantic_triggers = {
   \ 'c' : ['->', '.'],

@@ -33,6 +33,7 @@
     dc = diff --cached
     co = checkout
     cb = checkout -b
+    com = checkout master
     cp = cherry-pick
     ps = push
     pl = pull --ff-only

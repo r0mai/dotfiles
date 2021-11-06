@@ -215,6 +215,7 @@ let g:ycm_key_invoke_completion = '<C-Space>'
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_enable_diagnostic_signs = 0
 let g:ycm_auto_hover = -1 " this turns off auto hover pop-ups (<leader>D still works)
+set completeopt-=preview " this turns off YCM opening a small window after every TAB https://github.com/ycm-core/YouCompleteMe/issues/2015
 
 " settings from https://clang.llvm.org/extra/clangd/Installation.html
 let g:ycm_clangd_uses_ycmd_caching = 0

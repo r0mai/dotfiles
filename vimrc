@@ -38,6 +38,7 @@ Plugin 'jeroenbourgois/vim-actionscript'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'tpope/vim-surround'
+Plugin 'lyuts/vim-rtags'
 
 call vundle#end()
 filetype plugin indent on

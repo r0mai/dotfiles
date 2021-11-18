@@ -45,4 +45,5 @@ for file in $files; do
 
 done
 
-
+mkdir -p ~/config/nvim/
+ln -s $dir/config/nvim/init.vim ~/.config/nvim/init.vim

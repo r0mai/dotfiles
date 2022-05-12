@@ -76,3 +76,7 @@
     # gpgsign = true
 [gpg]
     program = gpg
+[init]
+	defaultBranch = master
+[pull]
+	ff = only

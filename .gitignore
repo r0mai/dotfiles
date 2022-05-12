@@ -4,4 +4,6 @@
 /vim/backups/
 /vim/swp/
 /vim/bundle/
+/vim/plugged/
+/vim/autoload/plug.vim
 .netrwhist

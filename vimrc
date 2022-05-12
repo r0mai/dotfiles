@@ -2,45 +2,46 @@
 set nocompatible
 filetype off
 
-if !isdirectory(expand("~/.vim/bundle/Vundle.vim/.git"))
-  !git clone git@github.com:gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin()
 
-let g:vundle_default_git_proto = 'git'
-
-Plugin 'gmarik/Vundle.vim'
-Plugin 'derekwyatt/vim-fswitch'
-Plugin 'scrooloose/nerdtree'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'tpope/vim-fugitive'
-Plugin 'r0mai/molokai'
-Plugin 'Valloric/YouCompleteMe.git'
-Plugin 'tomtom/tcomment_vim.git'
-Plugin 'tpope/vim-endwise.git'
-Plugin 'tomtom/tlib_vim.git'
-Plugin 'justinmk/vim-sneak.git'
+Plug 'gmarik/Vundle.vim'
+Plug 'derekwyatt/vim-fswitch'
+Plug 'scrooloose/nerdtree'
+Plug 'altercation/vim-colors-solarized'
+Plug 'tpope/vim-fugitive'
+Plug 'r0mai/molokai'
+Plug 'Valloric/YouCompleteMe'
+Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-endwise'
+Plug 'tomtom/tlib_vim'
+Plug 'justinmk/vim-sneak'
 " Installed this (also needed for powerlevel9k zsh fonts) https://github.com/ryanoasis/nerd-fonts
-Plugin 'bling/vim-airline.git'
-Plugin 'airblade/vim-gitgutter.git'
-Plugin 'wesQ3/vim-windowswap'
-Plugin 'vim-scripts/Rename'
-Plugin 'rking/ag.vim'
-Plugin 'jremmen/vim-ripgrep'
-Plugin 'tfnico/vim-gradle'
-Plugin 'martong/vim-compiledb-path'
-Plugin 'junegunn/fzf' " https://github.com/junegunn/fzf/blob/master/README-VIM.md
-Plugin 'tikhomirov/vim-glsl'
-Plugin 'r0mai/vim-djinni'
-Plugin 'jeroenbourgois/vim-actionscript'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'tpope/vim-surround'
-Plugin 'lyuts/vim-rtags'
+Plug 'bling/vim-airline'
+Plug 'airblade/vim-gitgutter'
+Plug 'wesQ3/vim-windowswap'
+Plug 'vim-scripts/Rename'
+Plug 'rking/ag.vim'
+Plug 'jremmen/vim-ripgrep'
+Plug 'tfnico/vim-gradle'
+Plug 'martong/vim-compiledb-path'
+Plug 'junegunn/fzf' " https://github.com/junegunn/fzf/blob/master/README-VIM.md
+Plug 'tikhomirov/vim-glsl'
+Plug 'r0mai/vim-djinni'
+Plug 'jeroenbourgois/vim-actionscript'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'tpope/vim-surround'
+Plug 'lyuts/vim-rtags'
+Plug 'leafOfTree/vim-svelte-plugin'
 
-call vundle#end()
+call plug#end()
+
 filetype plugin indent on
 
 set nu

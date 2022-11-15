@@ -262,6 +262,13 @@ autocmd VimEnter CompileDbPathIfExists 'build/compile_commands.json'
 " highlight vs fs with vim-glsl
 autocmd! BufNewFile,BufRead *.vs,*.fs set ft=glsl
 
+" format XML
+function! FormatXMLFunc()
+  silent %!xmllint --format --encode UTF-8 --recover - 2>/dev/null
+endfunction
+
+command! FormatXML call FormatXMLFunc()
+
 "airline
 let g:airline_powerline_fonts = 1
 

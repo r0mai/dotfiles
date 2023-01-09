@@ -139,13 +139,6 @@ export FZF_DEFAULT_COMMAND='rg --files --hidden'
 # ^G ^H: hashes (gh)
 source "${DOTFILES_REPO}/fzf-git.sh"
 
-# brew install nvm
-enable-nvm() {
-    export NVM_DIR="$HOME/.nvm"
-    [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-    [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-}
-
 # https://iterm2.com/documentation-shell-integration.html
 # curl -L https://iterm2.com/shell_integration/zsh -o ~/.iterm2_shell_integration.zsh
 source ~/.iterm2_shell_integration.zsh
@@ -199,6 +192,9 @@ fi
 
 # Set PATH, MANPATH, etc., for Homebrew.
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# This loads nvm bash_completion
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

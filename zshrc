@@ -169,11 +169,6 @@ alias sm='sugoi-make'
 alias sp='sugoi-prefer'
 alias rat='remake all tests'
 
-# hub github.com/github/hub
-if command -v hub > /dev/null 2>&1; then
-    eval "$(hub alias -s)"
-fi
-
 # Tells 'less' not to paginate if less than a page
 export LESS="-F -X $LESS"
 

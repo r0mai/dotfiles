@@ -40,6 +40,8 @@ Plug 'tpope/vim-surround'
 Plug 'lyuts/vim-rtags'
 Plug 'leafOfTree/vim-svelte-plugin'
 
+Plug 'tpope/vim-abolish' " Help with camelCasing code
+
 call plug#end()
 
 filetype plugin indent on

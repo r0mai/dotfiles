@@ -136,6 +136,10 @@ function global_replace() {
     rg "${search}" -l | xargs -n 1 sed -i '' "s/${search}/${new}/g"
 }
 
+function convert_svg() {
+    rsvg-convert "$1" > "$1.png"
+}
+
 # Fancy Ctrl+R (brew install fzf, then /usr/local/opt/fzf/install)
 export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always {}'"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

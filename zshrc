@@ -185,9 +185,6 @@ alias rat='remake all tests'
 # Tells 'less' not to paginate if less than a page
 export LESS="-F -X $LESS"
 
-if test -f ~/.bashrc_local; then
-    source ~/.bashrc_local
-fi
 alias bach="/Users/r0mai/prezi/frontend-packages/node_modules/.bin/bach"
 alias ci="/Users/r0mai/prezi/frontend-packages/node_modules/.bin/ci"
 
@@ -197,12 +194,12 @@ if which lsd > /dev/null; then
     alias la="lsd -la"
     alias ll="lsd -l"
 fi
-
 # Set PATH, MANPATH, etc., for Homebrew.
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# This loads nvm bash_completion
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+if test -f ~/.bashrc_local; then
+    source ~/.bashrc_local
+fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

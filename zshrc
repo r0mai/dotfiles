@@ -124,6 +124,18 @@ function format_xml() {
     xmllint --format "$1" > "$1.tmp" && mv "$1.tmp" "$1"
 }
 
+function global_replace() {
+    local search="$1"
+    local new="$2"
+
+    if test -z "$search" || test -z "$new"; then
+        echo "usage: global_replace <search> <new>"
+        return 1
+    fi
+
+    rg "${search}" -l | xargs -n 1 sed -i '' "s/${search}/${new}/g"
+}
+
 # Fancy Ctrl+R (brew install fzf, then /usr/local/opt/fzf/install)
 export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always {}'"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

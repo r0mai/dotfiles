@@ -40,7 +40,7 @@ Plug 'tpope/vim-surround'
 Plug 'lyuts/vim-rtags'
 Plug 'leafOfTree/vim-svelte-plugin'
 
-Plug 'tpope/vim-abolish' " Help with camelCasing code
+Plug 'tpope/vim-abolish' " Help with camelCasing code (use crc)
 
 call plug#end()
 

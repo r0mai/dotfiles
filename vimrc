@@ -29,7 +29,6 @@ Plug 'vim-scripts/Rename'
 Plug 'rking/ag.vim'
 Plug 'jremmen/vim-ripgrep'
 Plug 'tfnico/vim-gradle'
-Plug 'martong/vim-compiledb-path'
 Plug 'junegunn/fzf' " https://github.com/junegunn/fzf/blob/master/README-VIM.md
 Plug 'tikhomirov/vim-glsl'
 Plug 'r0mai/vim-djinni'

@@ -15,7 +15,7 @@ olddir=~/dotfiles_old # old dotfiles backup directory
 
 # commented out when transitioning form bash to zsh
 # files="bash_profile bashrc vimrc vim gitconfig gitignore_global ycm_extra_conf.py config/nvim/init.vim git-prompt-colors.sh"
-files="zshrc p10k.zsh vimrc vim gitconfig gitignore_global ycm_extra_conf.py"
+files="zshrc p10k.zsh vimrc vim gitconfig gitignore_global ycm_extra_conf.py config/nvim/init.vim"
 
 ##########
 
@@ -40,6 +40,7 @@ for file in $files; do
 		echo "Skipping ~/.$file (already a symlink)"
 	else
 		echo "Creating symlink to $file in home directory."
+                mkdir -p "$(dirname ~/."${file}")"
 		ln -s $dir/$file ~/.$file
 	fi
 
